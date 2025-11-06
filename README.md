@@ -10,7 +10,6 @@ A machine learning application for training an Iris classification model with ML
 - [Environment Variables](#environment-variables)
 - [Usage](#usage)
 - [Docker Deployment](#docker-deployment)
-- [Project Structure](#project-structure)
 - [API Endpoints](#api-endpoints)
 - [Monitoring](#monitoring)
 
@@ -230,31 +229,6 @@ For production, modify the approach to use cloud storage (S3, GCS, etc.) instead
 3. **Remove `--reload`** flag from uvicorn command in Dockerfile
 4. **Configure logging** to send logs to CloudWatch/ELK/centralized logging
 
-## 📁 Project Structure
-
-```
-mg-mlops-hw/
-├── .env                    # Environment variables (create this)
-├── .dockerignore          # Docker ignore patterns
-├── .gitignore             # Git ignore patterns
-├── Dockerfile             # Docker image definition
-├── Makefile               # Build and run commands
-├── README.md              # This file
-├── requirements.txt       # Python dependencies
-├── train.py               # Model training script
-├── serve.py               # FastAPI application
-├── monitor.py             # Log monitoring and visualization
-├── load_config.py         # Configuration loader
-├── read_mlflow_metrics.py # MLflow metrics reader
-├── demo.ipynb             # Jupyter notebook for testing
-├── config/
-│   └── config.yaml        # Application configuration
-├── models/                # Trained model files (gitignored)
-├── logs/                  # Application logs (gitignored)
-├── mlruns/                # MLflow tracking data (gitignored)
-└── utils/
-    └── logger.py          # Logging utilities
-```
 
 ## 🔌 API Endpoints
 
@@ -293,6 +267,9 @@ curl -X POST "http://localhost:8000/predict" \
 ```
 
 **Example using Python:**
+
+demo.ipynb contains an example of calling the endpoint an viewing the metrics
+
 ```python
 import requests
 

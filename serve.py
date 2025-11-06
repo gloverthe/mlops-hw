@@ -13,11 +13,7 @@ import dotenv
 
 dotenv.load_dotenv()
 
-# from load_config import load_config
 from utils.logger import get_logger
-
-
-# config = load_config()
 
 LOGS_DIR = os.getenv("LOGS_DIR", "logs")
 MODEL_DIR = os.getenv("MODEL_DIR", "models")
@@ -25,11 +21,6 @@ MODEL_NAME = os.getenv("MODEL_NAME", "model")
 MODEL_RUN_ID = os.getenv("MODEL_RUN_ID", "latest")
 
 logger = get_logger(name="api_logger", log_file=os.path.join(LOGS_DIR, "api.log"))
-
-# get the required model id
-# MODEL_NAME = config.get("model_name", "model")
-# MODEL_RUN_ID = config.get("model_run_id", "latest")
-# MODEL_PATH = config["path_to_models"]
 
 # if RUN_ID = "latest" pick the newest file matching pattern
 # Determine which model file to load

@@ -10,25 +10,20 @@ from sklearn.metrics import accuracy_score
 
 from utils.logger import get_logger
 
-# from load_config import load_config
-
-# Load configuration
-# config = load_config()
 import dotenv
 
 dotenv.load_dotenv()
 
-# MODELS_DIR = os.getenv("MODELS_DIR", "models")
+
 LOGS_DIR = os.getenv("LOGS_DIR", "logs")
-# CONFIG_FILE = os.getenv("CONFIG_FILE", "config.yaml")
+RANDOM_SEED = int(os.getenv("RANDOM_SEED", 42))
+MODEL_NAME = os.getenv("MODEL_NAME", "model")
+MODEL_DIR = os.getenv("MODEL_DIR", "models")
 
 logger = get_logger(
     name="train_logger", log_file=os.path.join(LOGS_DIR, "training.log")
 )
 
-RANDOM_SEED = int(os.getenv("RANDOM_SEED", 42))
-MODEL_NAME = os.getenv("MODEL_NAME", "model")
-MODEL_DIR = os.getenv("MODEL_DIR", "models")
 os.makedirs(MODEL_DIR, exist_ok=True)
 
 
