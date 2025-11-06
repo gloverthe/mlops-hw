@@ -1,0 +1,84 @@
+# Python.gitignore - typical patterns for Python projects (including MLOps artifacts)
+
+# Byte-compiled / optimized / DLLs
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+
+# Virtual environments
+.env/
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# IDE / editor folders
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python tooling caches
+.mypy_cache/
+.pyre/
+.pytype/
+.ropeproject
+
+# Sphinx / docs
+docs/_build/
+site/
+
+# Environment / secret files
+.env
+.env.*
+
+# Common data, DBs and artifacts
+*.sqlite3
+*.db
+
+# Machine learning model artifacts
+*.h5
+*.hdf5
+*.ckpt
+*.pt
+*.pth
+*.joblib
+*.pkl
+*.pickle
+
+# ML project folders often excluded
+models/
+checkpoints/
+outputs/
+logs/
+tensorboard/

@@ -1,0 +1,14 @@
+numpy
+pandas
+scikit-learn
+joblib
+black
+dotenv
+mlflow
+pyyaml
+requests
+ipykernel
+fastapi
+pydantic
+uvicorn
+mlflow

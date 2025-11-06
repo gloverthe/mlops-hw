@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/game_/Downloads/MLOps%20Homework/MLOps-hw/my_version/mlruns/0/5b1d13eb09a345c9977dbd1d91d7dde4/artifacts
+end_time: 1762420607387
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5b1d13eb09a345c9977dbd1d91d7dde4
+run_name: masked-koi-724
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762420607364
+status: 3
+tags: []
+user_id: game_

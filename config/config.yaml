@@ -1,0 +1,5 @@
+path_to_models: models
+random_seed: 42
+path_to_logs: logs
+model_name: iris_model
+model_run_id: 3958bc4364464563bb0e8f322d6d17b5

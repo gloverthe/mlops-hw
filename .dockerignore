@@ -1,0 +1,9 @@
+models/
+logs/
+*.pyc
+__pycache__/
+.mlruns/
+.env
+.ipynb
+.vscode/
+.venv/

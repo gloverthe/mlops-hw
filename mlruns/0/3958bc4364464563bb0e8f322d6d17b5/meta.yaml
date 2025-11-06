@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/game_/Downloads/MLOps%20Homework/MLOps-hw/my_version/mlruns/0/3958bc4364464563bb0e8f322d6d17b5/artifacts
+end_time: 1762423528864
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 3958bc4364464563bb0e8f322d6d17b5
+run_name: traveling-asp-897
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762423528845
+status: 3
+tags: []
+user_id: game_
