@@ -9,18 +9,26 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 
 from utils.logger import get_logger
-from load_config import load_config
+
+# from load_config import load_config
 
 # Load configuration
-config = load_config()
+# config = load_config()
+import dotenv
+
+dotenv.load_dotenv()
+
+# MODELS_DIR = os.getenv("MODELS_DIR", "models")
+LOGS_DIR = os.getenv("LOGS_DIR", "logs")
+# CONFIG_FILE = os.getenv("CONFIG_FILE", "config.yaml")
 
 logger = get_logger(
-    name="train_logger", log_file=os.path.join(config["path_to_logs"], "training.log")
+    name="train_logger", log_file=os.path.join(LOGS_DIR, "training.log")
 )
 
-RANDOM_SEED = config["random_seed"]
-MODEL_NAME = config.get("model_name", "model")
-MODEL_DIR = config["path_to_models"]
+RANDOM_SEED = int(os.getenv("RANDOM_SEED", 42))
+MODEL_NAME = os.getenv("MODEL_NAME", "model")
+MODEL_DIR = os.getenv("MODEL_DIR", "models")
 os.makedirs(MODEL_DIR, exist_ok=True)
 
 
@@ -44,7 +52,7 @@ def train():
 
         model_path = os.path.join(MODEL_DIR, f"{MODEL_NAME}_{run_id}.pkl")
         joblib.dump(model, model_path)
-        mlflow.log_artifact(model_path, artifact_path=MODEL_NAME)
+        mlflow.log_artifact(model_path, artifact_path="models")
 
         logger.info(f"Trained model saved to {model_path}, accuracy={acc:.4f}")
         logger.info(f"MLflow run ID: {run_id}")

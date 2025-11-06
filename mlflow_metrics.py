@@ -15,7 +15,9 @@ def _format_run_row(run):
     status = run.info.status or ""
     start_time_ms = run.info.start_time
     start_time = (
-        datetime.fromtimestamp(start_time_ms / 1000).isoformat(sep=" ", timespec="seconds")
+        datetime.fromtimestamp(start_time_ms / 1000).isoformat(
+            sep=" ", timespec="seconds"
+        )
         if start_time_ms
         else ""
     )
@@ -40,7 +42,12 @@ def _print_table(headers, rows, widths, cap_width):
     print(header_line)
     print(sep_line)
     for row in rows:
-        print(" | ".join(_trunc(row[i], i, cap_width).ljust(widths[i]) for i in range(len(headers))))
+        print(
+            " | ".join(
+                _trunc(row[i], i, cap_width).ljust(widths[i])
+                for i in range(len(headers))
+            )
+        )
 
 
 def _print_latest_run_metric_histories(client, latest_run):

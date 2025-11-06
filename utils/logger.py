@@ -2,7 +2,9 @@ import logging
 import os
 
 
-def get_logger(name: str, log_file: str = None, file_mode: str = "a", level: int = logging.INFO) -> logging.Logger:
+def get_logger(
+    name: str, log_file: str = None, file_mode: str = "a", level: int = logging.INFO
+) -> logging.Logger:
     logger = logging.getLogger(name)
 
     # Ensure we don't add duplicate handlers on repeated calls
@@ -22,7 +24,8 @@ def get_logger(name: str, log_file: str = None, file_mode: str = "a", level: int
         # check for existing file handler for the same file
         file_abs = os.path.abspath(log_file)
         has_file_handler = any(
-            isinstance(h, logging.FileHandler) and getattr(h, "baseFilename", None) == file_abs
+            isinstance(h, logging.FileHandler)
+            and getattr(h, "baseFilename", None) == file_abs
             for h in logger.handlers
         )
 
