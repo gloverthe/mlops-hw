@@ -1,6 +1,10 @@
 from mlflow.tracking import MlflowClient
 from datetime import datetime
+import os
+import dotenv
+dotenv.load_dotenv()
 
+MLFLOW_EXPERIMENT_NAME = os.getenv("MLFLOW_EXPERIMENT_NAME", "Default")
 
 def _trunc(s, i, cap_width):
     s = str(s)
@@ -96,4 +100,4 @@ def print_latest_run_metrics(experiment_name="Default", max_results=1000):
 
 if __name__ == "__main__":
     # change name if you logged to a non-default experiment
-    print_latest_run_metrics(experiment_name="Default")
+    print_latest_run_metrics(experiment_name=MLFLOW_EXPERIMENT_NAME)

@@ -8,7 +8,7 @@ from datetime import datetime
 class monitor:
     def __init__(self, log_file: str):
         self.log_file = log_file
-
+        
     # Parse log entries
     def parse_log(self):
         log_data = []
@@ -17,6 +17,7 @@ class monitor:
                 lines = f.readlines()
                 print(f"📄 Reading {len(lines)} lines from {self.log_file}")
 
+                failed_count = 0
                 for line in lines:
                     # Extract timestamp and JSON data
                     match = re.search(
@@ -37,9 +38,12 @@ class monitor:
                             )
                             continue
                     else:
-                        print(f"⚠️ Line didn't match pattern: {line[:80]}...")
+                        # print(f"⚠️ Line didn't match pattern: {line[:80]}...")
+                        failed_count += 1
 
                 print(f"✅ Successfully parsed {len(log_data)} log entries")
+                if failed_count > 0:
+                    print(f"⚠️ Failed to parse {failed_count} log entries") 
         except FileNotFoundError:
             print(f"❌ File not found: {self.log_file}")
         except Exception as e:

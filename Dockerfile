@@ -9,7 +9,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the application code
 COPY serve.py .
-COPY load_config.py .
 COPY utils/ ./utils/
 # Do not copy models/logs into the image so they can be mounted from the host at runtime
 RUN mkdir -p /app/models /app/logs
