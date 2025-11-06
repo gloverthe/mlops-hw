@@ -1,3 +1,6 @@
+NB - I am aware the dependencies should be pinned to versions - but when i started to do this it started to cause issues and conflicts.  This would be something to fix with more time
+
+
 # ML Model Training & API Service
 
 A machine learning application for training an Iris classification model with MLflow tracking and serving predictions via FastAPI.
