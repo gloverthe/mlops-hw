@@ -72,6 +72,8 @@ Create a `.env` file in the project root with the following content:
 MODEL_NAME=iris_model
 MODEL_RUN_ID=latest
 MODEL_DIR=models
+MLFLOW_MLRUNS_PATH=mlruns
+MLFLOW_EXPERIMENT_NAME=iris_experiment
 
 # Logging Configuration
 LOGS_DIR=logs

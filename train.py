@@ -20,6 +20,10 @@ RANDOM_SEED = int(os.getenv("RANDOM_SEED", 42))
 MODEL_NAME = os.getenv("MODEL_NAME", "model")
 MODEL_DIR = os.getenv("MODEL_DIR", "models")
 
+mlruns_path = os.path.abspath(os.getenv("MLFLOW_MLRUNS_PATH", "mlruns"))
+mlflow.set_tracking_uri(f"file://{mlruns_path}")
+mlflow.set_experiment(os.getenv("MLFLOW_EXPERIMENT_NAME", "default_experiment"))
+
 logger = get_logger(
     name="train_logger", log_file=os.path.join(LOGS_DIR, "training.log")
 )
