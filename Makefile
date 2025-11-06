@@ -21,7 +21,7 @@ serve:
 build:
 	docker build -t ml-api:latest .
 
-docker-run:
+docker-run: docker-stop
 	docker run -d \
 	-p 8000:8000 \
 	-v "$(MODELS_DIR):/app/models" \
