@@ -1,5 +1,8 @@
 # Python.gitignore - typical patterns for Python projects (including MLOps artifacts)
 
+# mlruns directory for MLflow
+mlruns/
+
 # Byte-compiled / optimized / DLLs
 __pycache__/
 *.py[cod]
