@@ -40,7 +40,7 @@ cd /path/to/mg-mlops-hw
 
 ```bash
 # Create virtual environment
-python -m venv .venv
+python3 -m venv .venv
 
 # Activate virtual environment
 # On macOS/Linux:
